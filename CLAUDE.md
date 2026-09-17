@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 概要
 
-NEW CROWN Lesson 1〜4 + 小学校の単語を対象とした、ブラウザで直接動作するタイピング練習アプリです。
+NEW CROWN Lesson 1〜5 + 小学校の単語を対象とした、ブラウザで直接動作するタイピング練習アプリです。
 フレームワーク不使用の単一HTMLファイルアプリで、CSVデータをJSONに変換するビルドスクリプトを含みます。
 
 ## 開発コマンド
@@ -45,7 +45,7 @@ pnpm run build
 
 - `lesson`: サブレッスンID（`1-1` のような `番号-パート` 形式、`elementary`、または数値のみ）
 - `answer`: `〜` 以下の表現を除いた答え用英語（ビルド時に自動生成）
-- `pos`: 品詞タグ（名/動/形/副/句など）
+- `pos`: 品詞タグ（名/動/形/副/句/助/間など）
 
 ## 制約と注意
 
@@ -54,4 +54,3 @@ pnpm run build
 - `json/` と `csv/` はGit管理対象。クローン後は `pnpm install && pnpm run build` でデータを再生成可能
 - 依存は `csv-parse` だけのミニマム構成
 - CSVは表計算ソフト不要でテキストエディタ／Google スプレッドシート等で編集可能。カンマ・引用符を含むセルはダブルクォートで囲む（RFC4180準拠、csv-parseが処理）
-- Dockerコンテナ環境 (`devcontainer/`) が定義されているが、開発には必須ではない

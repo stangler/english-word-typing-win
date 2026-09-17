@@ -1,6 +1,6 @@
 # 英単語タイピング確認テスト
 
-NEW CROWN Lesson 1〜4 + 小学校 の単語を対象としたタイピング練習アプリです。
+NEW CROWN Lesson 1〜5 + 小学校 の単語を対象としたタイピング練習アプリです。
 
 ブラウザだけで動作するので、サーバーを用意する必要はありません。
 
@@ -15,9 +15,9 @@ NEW CROWN Lesson 1〜4 + 小学校 の単語を対象としたタイピング練
 - **シャッフル機能**: 問題の順番をランダムに並び替えて出題できます
 - **正誤記録**: セッション内の正解数・不正解数がリアルタイムに表示されます
 - **復習機能**: 終了画面で間違えた単語の一覧を確認できます
-- **パート／カテゴリー選択**: Lesson1〜4は「Lesson1」ボタン→「Part1」「Goal Activity」のようにパート単位で、「小学校」は「人」「動物」などカテゴリー単位で出題できます（項目数の多いカテゴリーは「その他いろいろな名詞①〜③」のように分割済み）。トップ画面のボタン数を抑えるため、パート・カテゴリーは1つのボタンをタップして開くパネルから選ぶ方式です
+- **パート／カテゴリー選択**: Lesson1〜5は「Lesson1」ボタン→「Part1」「Goal Activity」のようにパート単位で、「小学校」は「人」「動物」などカテゴリー単位で出題できます（項目数の多いカテゴリーは「その他いろいろな名詞①〜③」のように分割済み）。トップ画面のボタン数を抑えるため、パート・カテゴリーは1つのボタンをタップして開くパネルから選ぶ方式です
 - **テスト履歴**: トップ画面下部に直近の結果一覧を表示（結果はリロードなしで即時反映）。結果画面の「履歴を見る」ボタンから、レッスンごとの正答率推移グラフと全履歴の一覧を確認できます
-- **進捗状況の可視化**: 履歴画面に「進捗状況」パネルを表示し、Lesson1〜4の各パート・小学校の各カテゴリーについて「済（直近の正答率）」「未着手」が出題済み問題数とともに一目でわかります。バッジをタップするとその項目のクイズにすぐ挑戦できます
+- **進捗状況の可視化**: 履歴画面に「進捗状況」パネルを表示し、Lesson1〜5の各パート・小学校の各カテゴリーについて「済（直近の正答率）」「未着手」が出題済み問題数とともに一目でわかります。バッジをタップするとその項目のクイズにすぐ挑戦できます
 
 ## 開発環境のセットアップ
 
@@ -45,10 +45,11 @@ Excel不要。テキストエディタやGoogleスプレッドシート、LibreO
 | `csv/Lesson2.csv` | NEW CROWN Lesson 2 の単語データ |
 | `csv/Lesson3.csv` | NEW CROWN Lesson 3 の単語データ |
 | `csv/Lesson4.csv` | NEW CROWN Lesson 4 の単語データ |
+| `csv/Lesson5.csv` | NEW CROWN Lesson 5 の単語データ |
 | `csv/小学校.csv` | 小学校の基本英単語 |
 
 各CSVの列（1行目がヘッダー）:
-- Lesson1〜4: `Lesson,Part,英語,発音,品詞,意味,英語例文,日本語訳,なんでもメモ`
+- Lesson1〜5: `Lesson,Part,英語,発音,品詞,意味,英語例文,日本語訳,なんでもメモ`
 - 小学校: `カテゴリー,英語,発音,日本語`
 
 カンマや引用符を含むセルはダブルクォート `"..."` で囲んでください（例文中のカンマなど）。
@@ -85,15 +86,17 @@ pnpm run build
 | `json/lesson2-1.json`〜`lesson2-3.json` | Lesson 2（Part1・Part2・Goal Activity）のデータ |
 | `json/lesson3-1.json`〜`lesson3-6.json` | Lesson 3（Introduction・Part1〜3・Goal Activity＋復習）のデータ |
 | `json/lesson4-1.json`〜`lesson4-6.json` | Lesson 4（Introduction・Part1〜4・Goal Activity＋復習）のデータ |
+| `json/lesson5-1.json`〜`lesson5-6.json` | Lesson 5（Part1〜3・Small Talk・Goal Activity・Take Action! Listen 2）のデータ |
 | `json/lesson-elementary.json` | 小学校のみのデータ |
 
 ## 対象単語
 
-- Lesson 1〜4（NEW CROWN、各レッスンともPart単位で分割済み）
+- Lesson 1〜5（NEW CROWN、各レッスンともPart単位で分割済み）
   - Lesson 1: 1-1〜1-4（Part1〜3・Goal Activity）
   - Lesson 2: 2-1〜2-3（Part1・Part2・Goal Activity）
   - Lesson 3: 3-1〜3-6（Introduction・Part1〜3・Goal Activity＋復習）
   - Lesson 4: 4-1〜4-6（Introduction・Part1〜4・Goal Activity＋復習）
+  - Lesson 5: 5-1〜5-6（Part1〜3・Small Talk・Goal Activity・Take Action! Listen 2）
 - 小学校で習う基本英単語（カテゴリー: 人／動物／食べ物・飲み物／身の回りのもの①②／場所①②／自然／教科／スポーツ／その他いろいろな名詞①②③／状態や動作を表すことば①②③④／名詞をくわしくできることば①②③／動詞・形容詞をくわしくできることば）
 
 ## 技術

@@ -5,7 +5,7 @@ import path from 'path';
 function convertWords(data, defaultLesson = '') {
   // Part列（Introduction / 1 / 2 / 3 / Goal Activity など）が出現する順番を
   // シート内での初出順に記録しておく。defaultLessonが指定されていない
-  // （＝小学校・曜日などの語彙集ではなく、Lesson1〜3のような通常レッスン）場合のみ、
+  // （＝小学校・曜日などの語彙集ではなく、Lesson1〜5のような通常レッスン）場合のみ、
   // このPart順にもとづいてサブレッスン（例: 2-1, 2-2, 2-3）に分割する。
   const partOrder = [];
   data.forEach(row => {
@@ -18,7 +18,7 @@ function convertWords(data, defaultLesson = '') {
     let lesson = defaultLesson ? defaultLesson : (row['Lesson'] || '');
     const part = String(row['Part'] || row['カテゴリー'] || '');
 
-    // Lesson 1・2・3 などの通常レッスンをPartの出現順でサブレッスンに分割
+    // Lesson 1〜5 などの通常レッスンをPartの出現順でサブレッスンに分割
     // 例: Lesson1 → 1-1, 1-2, 1-3, 1-4 / Lesson2 → 2-1, 2-2, 2-3
     if (!defaultLesson && lesson !== '' && partOrder.length > 1) {
       const idx = partOrder.indexOf(part);
