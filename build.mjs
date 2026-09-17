@@ -1,4 +1,4 @@
-import xlsx from 'xlsx';
+import { parse } from 'csv-parse/sync';
 import fs from 'fs';
 import path from 'path';
 
@@ -42,26 +42,29 @@ function convertWords(data, defaultLesson = '') {
   });
 }
 
-// --- Process all xlsx files in xlsx/ directory ---
+// --- Process all csv files in csv/ directory ---
 let allWords = [];
 
-if (!fs.existsSync('xlsx')) {
-  console.error('Error: xlsx/ directory not found.');
+if (!fs.existsSync('csv')) {
+  console.error('Error: csv/ directory not found.');
   process.exit(1);
 }
 
-const xlsxFiles = fs.readdirSync('xlsx').filter(f => f.endsWith('.xlsx'));
+const csvFiles = fs.readdirSync('csv').filter(f => f.endsWith('.csv'));
 
-if (xlsxFiles.length === 0) {
-  console.error('Error: No xlsx files found in xlsx/ directory.');
+if (csvFiles.length === 0) {
+  console.error('Error: No csv files found in csv/ directory.');
   process.exit(1);
 }
 
-xlsxFiles.forEach(filename => {
-  const filepath = path.join('xlsx', filename);
-  const wb = xlsx.readFile(filepath);
-  const ws = wb.Sheets[wb.SheetNames[0]];
-  const data = xlsx.utils.sheet_to_json(ws);
+csvFiles.forEach(filename => {
+  const filepath = path.join('csv', filename);
+  // BOM付きUTF-8で保存されたExcel由来CSVにも対応
+  const raw = fs.readFileSync(filepath, 'utf-8').replace(/^\uFEFF/, '');
+  const data = parse(raw, {
+    columns: true,
+    skip_empty_lines: true,
+  });
 
   let words;
   if (filename.startsWith('小学校') || filename.startsWith('elementary')) {

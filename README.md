@@ -35,16 +35,23 @@ pnpm install
 
 ### 単語データの更新
 
-`xlsx/` フォルダに以下のExcelファイルを配置した後、`pnpm run build` でJSONデータを再生成します。
+`csv/` フォルダに以下のCSVファイル（UTF-8, BOM付き）を配置した後、`pnpm run build` でJSONデータを再生成します。
+Excel不要。テキストエディタやGoogleスプレッドシート、LibreOffice Calcなどで編集できます。
 
-必要なExcelファイル:
+必要なCSVファイル:
 | ファイル | 内容 |
 |---|---|
-| `xlsx/Lesson1.xlsx` | NEW CROWN Lesson 1 の単語データ |
-| `xlsx/Lesson2.xlsx` | NEW CROWN Lesson 2 の単語データ |
-| `xlsx/Lesson3.xlsx` | NEW CROWN Lesson 3 の単語データ |
-| `xlsx/Lesson4.xlsx` | NEW CROWN Lesson 4 の単語データ |
-| `xlsx/小学校.xlsx` | 小学校の基本英単語 |
+| `csv/Lesson1.csv` | NEW CROWN Lesson 1 の単語データ |
+| `csv/Lesson2.csv` | NEW CROWN Lesson 2 の単語データ |
+| `csv/Lesson3.csv` | NEW CROWN Lesson 3 の単語データ |
+| `csv/Lesson4.csv` | NEW CROWN Lesson 4 の単語データ |
+| `csv/小学校.csv` | 小学校の基本英単語 |
+
+各CSVの列（1行目がヘッダー）:
+- Lesson1〜4: `Lesson,Part,英語,発音,品詞,意味,英語例文,日本語訳,なんでもメモ`
+- 小学校: `カテゴリー,英語,発音,日本語`
+
+カンマや引用符を含むセルはダブルクォート `"..."` で囲んでください（例文中のカンマなど）。
 
 ```bash
 pnpm run build
@@ -52,7 +59,7 @@ pnpm run build
 
 ## 注意事項
 
-- ビルドで生成された `xlsx/` および `json/` ディレクトリは Git 管理対象です。  
+- ビルドで生成された `csv/` および `json/` ディレクトリは Git 管理対象です。  
   リポジトリをクローンしたら `pnpm install && pnpm run build` でデータを生成できます。
 
 ## ファイル構成
@@ -60,12 +67,12 @@ pnpm run build
 | ファイル | 説明 |
 |---|---|
 | `english_typing.html` | メインアプリ（ブラウザで直接開く） |
-| `build.mjs` | Excel → JSON 変換スクリプト |
+| `build.mjs` | CSV → JSON 変換スクリプト |
 | `package.json` | プロジェクト設定・スクリプト定義 |
 | `pnpm-lock.yaml` | pnpm ロックファイル |
 | `.gitignore` | Git 管理除外設定 |
 | `.npmrc` | npm/pnpm 設定 |
-| `xlsx/` | 元のExcelファイル（編集するのはここ、Git管理対象） |
+| `csv/` | 元のCSVファイル（編集するのはここ、Git管理対象） |
 | `json/` | ビルド成果物のJSON（Git管理対象） |
 
 ### ビルドで生成されるファイル
@@ -93,5 +100,5 @@ pnpm run build
 
 - 純粋なHTML + CSS + JavaScript（フレームワーク不使用）
 - データは `json/words-data.js` から読み込み（サーバー不要、ブラウザで直接開いて動作）
-- Excel → JSON変換には [SheetJS](https://sheetjs.com/) を使用
+- CSV → JSON変換には [csv-parse](https://csv.js.org/parse/) を使用
 - パッケージ管理: [pnpm](https://pnpm.io/)

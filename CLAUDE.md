@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 概要
 
 NEW CROWN Lesson 1〜4 + 小学校の単語を対象とした、ブラウザで直接動作するタイピング練習アプリです。
-フレームワーク不使用の単一HTMLファイルアプリで、ExcelデータをJSONに変換するビルドスクリプトを含みます。
+フレームワーク不使用の単一HTMLファイルアプリで、CSVデータをJSONに変換するビルドスクリプトを含みます。
 
 ## 開発コマンド
 
@@ -13,7 +13,7 @@ NEW CROWN Lesson 1〜4 + 小学校の単語を対象とした、ブラウザで�
 # 依存パッケージのインストール
 pnpm install
 
-# Excel → JSON ビルド（単語データの生成）
+# CSV → JSON ビルド（単語データの生成）
 pnpm run build
 
 # テスト — 未設定（このプロジェクトにはテストは存在しない）
@@ -24,14 +24,14 @@ pnpm run build
 | ファイル | 説明 |
 |---|---|
 | `english_typing.html` | メインアプリ単一ファイル。HTML/CSS/JSが全て含まれる。ブラウザで直接開くだけで動作 |
-| `build.mjs` | SheetJSを使って `xlsx/` のExcelファイルから `json/` にJSONデータを生成するビルドスクリプト |
+| `build.mjs` | csv-parseを使って `csv/` のCSVファイルから `json/` にJSONデータを生成するビルドスクリプト |
 | `json/words-data.js` | ビルド成果物。`window.WORDS` として全単語データを公開（HTMLから直接読み込み用） |
-| `xlsx/*.xlsx` | ソースの単語データ。編集したら `pnpm run build` で再生成 |
+| `csv/*.csv` | ソースの単語データ（UTF-8 BOM付き）。編集したら `pnpm run build` で再生成 |
 
 ## アーキテクチャ
 
 - **単一HTMLファイル構成**: `english_typing.html` にCSS・JSが全て埋め込まれている。SPA的な画面遷移（start → quiz → result/history）を `<section>` の hidden属性で制御
-- **データフロー**: Excel (`xlsx/`) → `build.mjs` → JSON (`json/`) → `json/words-data.js` → HTML内JSで `window.WORDS` として読み込み
+- **データフロー**: CSV (`csv/`) → `build.mjs` → JSON (`json/`) → `json/words-data.js` → HTML内JSで `window.WORDS` として読み込み
 - **状態管理**: グローバルの `state` オブジェクトに現在の問題キュー・スコア・間違えた問題などを保持
 - **永続化**: `localStorage` にテスト履歴 (`typingHistory`) と出題済み問題の進捗 (`typingAttempted`) を保存
 - **チャート**: Canvas APIによる手描きの折れ線グラフ（外部ライブラリ不使用）
@@ -51,6 +51,7 @@ pnpm run build
 
 - サーバー不要で動作するため `file://` プロトコルでも動くが、`json/words-data.js` は外部スクリプトとして `<script src>` で読み込まれる
 - パッケージマネージャーは pnpm (v11.10.0)。`.npmrc` で `shamefully-hoist=true` が設定されている
-- `json/` と `xlsx/` はGit管理対象。クローン後は `pnpm install && pnpm run build` でデータを再生成可能
-- 依存は `xlsx` (SheetJS) だけのミニマム構成
+- `json/` と `csv/` はGit管理対象。クローン後は `pnpm install && pnpm run build` でデータを再生成可能
+- 依存は `csv-parse` だけのミニマム構成
+- CSVは表計算ソフト不要でテキストエディタ／Google スプレッドシート等で編集可能。カンマ・引用符を含むセルはダブルクォートで囲む（RFC4180準拠、csv-parseが処理）
 - Dockerコンテナ環境 (`devcontainer/`) が定義されているが、開発には必須ではない

@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/stangler/english-word-typing-app#readme",
   "devDependencies": {
-    "xlsx": "^0.18.5"
+    "csv-parse": "^5.6.0"
   }
 }
