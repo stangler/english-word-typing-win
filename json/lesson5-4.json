@@ -1,0 +1,62 @@
+[
+  {
+    "lesson": "5-4",
+    "part": "Small Talk",
+    "en": "cheerful",
+    "answer": "cheerful",
+    "ipa": "[ˈtʃɪərfəl]",
+    "pos": "形",
+    "ja": "元気のいい、明るい",
+    "ex_en": "Hey Siri, play some cheerful music, please.",
+    "ex_ja": "ヘイ Siri、なにか明るい音楽かけて。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-4",
+    "part": "Small Talk",
+    "en": "clever",
+    "answer": "clever",
+    "ipa": "[ˈklevər]",
+    "pos": "形",
+    "ja": "利口な",
+    "ex_en": "My smartphone is so clever.",
+    "ex_ja": "私のスマホはなんてかしこいんだ。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-4",
+    "part": "Small Talk",
+    "en": "easygoing",
+    "answer": "easygoing",
+    "ipa": "[ˌiːziˈɡoʊɪŋ]",
+    "pos": "形",
+    "ja": "のんびりした",
+    "ex_en": "Am I easygoing? Do you think so?",
+    "ex_ja": "私ってのんびりしてる？ そうかな？",
+    "memo": ""
+  },
+  {
+    "lesson": "5-4",
+    "part": "Small Talk",
+    "en": "gentle",
+    "answer": "gentle",
+    "ipa": "[ˈdʒentl]",
+    "pos": "形",
+    "ja": "穏やかな、優しい",
+    "ex_en": "The wind is gentle today.",
+    "ex_ja": "今日は風が優しいです。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-4",
+    "part": "Small Talk",
+    "en": "honest",
+    "answer": "honest",
+    "ipa": "[ˈɑːnəst]",
+    "pos": "形",
+    "ja": "正直な、誠実な",
+    "ex_en": "I want to be an honest adult.",
+    "ex_ja": "正直な大人になりたい。",
+    "memo": "honest の下線部は発音しない"
+  }
+]

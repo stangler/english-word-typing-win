@@ -1,0 +1,74 @@
+[
+  {
+    "lesson": "5-2",
+    "part": "2",
+    "en": "does",
+    "answer": "does",
+    "ipa": "[dʌz]",
+    "pos": "助",
+    "ja": "do の 3人称単数現在形",
+    "ex_en": "Lisa, does Mika like chocolate?",
+    "ex_ja": "リサ、ミカってチョコ好き？",
+    "memo": ""
+  },
+  {
+    "lesson": "5-2",
+    "part": "2",
+    "en": "doesn't",
+    "answer": "doesn't",
+    "ipa": "[ˈdʌznt]",
+    "pos": "短",
+    "ja": "does not の短縮形",
+    "ex_en": "This almond jelly doesn't have much taste.",
+    "ex_ja": "この杏仁豆腐、あんまり味がしない。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-2",
+    "part": "2",
+    "en": "page",
+    "answer": "page",
+    "ipa": "[peɪdʒ]",
+    "pos": "名",
+    "ja": "ページ",
+    "ex_en": "Which page of the textbook is that on?",
+    "ex_ja": "それって教科書の何ページ？",
+    "memo": ""
+  },
+  {
+    "lesson": "5-2",
+    "part": "2",
+    "en": "university",
+    "answer": "university",
+    "ipa": "[ˌjuːnəˈvɜːrsəti]",
+    "pos": "名",
+    "ja": "大学",
+    "ex_en": "Should I go to university or not?",
+    "ex_ja": "大学に行くべきかな、それとも行かないほうがいいのかな？",
+    "memo": "university は総合大学 college は単科大学"
+  },
+  {
+    "lesson": "5-2",
+    "part": "2",
+    "en": "guitarist",
+    "answer": "guitarist",
+    "ipa": "[ɡɪˈtɑːrɪst]",
+    "pos": "名",
+    "ja": "ギター奏者",
+    "ex_en": "I heard that the band is recruiting a guitarist.",
+    "ex_ja": "軽音部がギタリスト募集してるんだって。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-2",
+    "part": "2",
+    "en": "bagpipes",
+    "answer": "bagpipes",
+    "ipa": "[ˈbæɡpaɪps]",
+    "pos": "名",
+    "ja": "バグパイプ",
+    "ex_en": "What do bagpipes sound like?",
+    "ex_ja": "バグパイプってどんな音？",
+    "memo": ""
+  }
+]

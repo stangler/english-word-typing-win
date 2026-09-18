@@ -1,0 +1,110 @@
+[
+  {
+    "lesson": "5-1",
+    "part": "1",
+    "en": "~'s",
+    "answer": "~'s",
+    "ipa": "[—]",
+    "pos": "句",
+    "ja": "〜の",
+    "ex_en": "Ken's house has a nice porch.",
+    "ex_ja": "ケンの家にはいい感じの縁側があります。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-1",
+    "part": "1",
+    "en": "London",
+    "answer": "London",
+    "ipa": "[ˈlʌndən]",
+    "pos": "名",
+    "ja": "ロンドン",
+    "ex_en": "In London, foxes often walk around the streets.",
+    "ex_ja": "ロンドンではよく街中をきつねが歩いています。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-1",
+    "part": "1",
+    "en": "tourist",
+    "answer": "tourist",
+    "ipa": "[ˈtʊərɪst]",
+    "pos": "名",
+    "ja": "観光客",
+    "ex_en": "Are you a tourist or a local?",
+    "ex_ja": "旅行者ですか？ それとも地元の方ですか？",
+    "memo": ""
+  },
+  {
+    "lesson": "5-1",
+    "part": "1",
+    "en": "place",
+    "answer": "place",
+    "ipa": "[pleɪs]",
+    "pos": "名",
+    "ja": "場所",
+    "ex_en": "I'm afraid of high places.",
+    "ex_ja": "私、高い所だめなのよ。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-1",
+    "part": "1",
+    "en": "like",
+    "answer": "like",
+    "ipa": "[laɪk]",
+    "pos": "前",
+    "ja": "〜のような",
+    "ex_en": "Life is like an onion. — What do you mean?",
+    "ex_ja": "人生は玉ねぎみたいなものさ。— どういう意味？",
+    "memo": ""
+  },
+  {
+    "lesson": "5-1",
+    "part": "1",
+    "en": "they",
+    "answer": "they",
+    "ipa": "[ðeɪ]",
+    "pos": "代",
+    "ja": "彼(女)らは、それらは",
+    "ex_en": "Are these your scissors? — Yes, they are.",
+    "ex_ja": "これってきみのハサミ？ — そうだよ。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-1",
+    "part": "1",
+    "en": "wear",
+    "answer": "wear",
+    "ipa": "[weər]",
+    "pos": "動",
+    "ja": "身に着けている",
+    "ex_en": "Our vice principal wears round glasses.",
+    "ex_ja": "うちの副校長先生は丸いメガネをかけています。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-1",
+    "part": "1",
+    "en": "their",
+    "answer": "their",
+    "ipa": "[ðeər]",
+    "pos": "代",
+    "ja": "彼(女)らの、それらの",
+    "ex_en": "I like their uniforms better than ours.",
+    "ex_ja": "あいつのユニフォームのほうがいいな、ぼくらのより。",
+    "memo": ""
+  },
+  {
+    "lesson": "5-1",
+    "part": "1",
+    "en": "video",
+    "answer": "video",
+    "ipa": "[ˈvɪdioʊ]",
+    "pos": "形",
+    "ja": "動画の",
+    "ex_en": "This video editing app is awesome.",
+    "ex_ja": "この動画編集アプリめっちゃ優秀だわ。",
+    "memo": ""
+  }
+]
